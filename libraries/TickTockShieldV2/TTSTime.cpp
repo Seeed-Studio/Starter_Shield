@@ -1,34 +1,40 @@
 /*
   TTSTime.cpp
-  2013 Copyright (c) Seeed Technology Inc.  All right reserved.
 
   Author:Loovee
   2013-11-21
  
-  This library is free software; you can redistribute it and/or
-  modify it under the terms of the GNU Lesser General Public
-  License as published by the Free Software Foundation; either
-  version 2.1 of the License, or (at your option) any later version.
+  The MIT License (MIT)
+  Copyright (c) 2013 Seeed Technology Inc.
 
-  This library is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-  Lesser General Public License for more details.
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
 
-  You should have received a copy of the GNU Lesser General Public
-  License along with this library; if not, write to the Free Software
-  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+  THE SOFTWARE.
 */
 
 #include <Wire.h>
 #include "TTSTime.h"
 
-#define YEAR    13
-#define MONTH   11
-#define DAY     21
-#define WEEK    4
+#define YEAR        13
+#define MONTH       11
+#define DAY         21
+#define WEEK        4
 
-#define DS1307_I2C_ADDRESS      0x68
+#define I2CADDR     0x68
 
 /*********************************************************************************************************
  * Function Name: decToBcd
@@ -65,7 +71,7 @@ void TTSTime::setTime(uchar hour, uchar min, uchar sec)
     if(min > 59 || min < 0)return;
     if(sec > 59 || min < 0)return;
     
-    Wire.beginTransmission(DS1307_I2C_ADDRESS);
+    Wire.beginTransmission(I2CADDR);
     Wire.write((uchar)0x00);
     Wire.write(decToBcd(sec));                              // 0 to bit 7 starts the clock
     Wire.write(decToBcd(min));
@@ -86,10 +92,10 @@ void TTSTime::setTime(uchar hour, uchar min, uchar sec)
 *********************************************************************************************************/
 void TTSTime::getTime(uchar *hour, uchar *min, uchar *sec)
 {
-    Wire.beginTransmission(DS1307_I2C_ADDRESS);
+    Wire.beginTransmission(I2CADDR);
     Wire.write((uchar)0x00);
     Wire.endTransmission();
-    Wire.requestFrom(DS1307_I2C_ADDRESS, 7);
+    Wire.requestFrom(I2CADDR, 7);
     
     uchar tmp = 0;
     

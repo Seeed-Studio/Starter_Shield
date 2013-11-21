@@ -23,6 +23,7 @@
 #define TM1636_h
 #include <inttypes.h>
 #include <Arduino.h>
+
 //************definitions for TM1636*********************
 #define ADDR_AUTO  0x40
 #define ADDR_FIXED 0x44
