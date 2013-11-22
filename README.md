@@ -39,7 +39,7 @@
 
 ### Button ###
 
-	TTSButton button(Pin);
+	TTSButton button(Pin);								// TTSK1, TTSK2, TTSK3
 	
 	button.get();                                       // return button state, HIGH or LOW
 	button.pressed();                                   // return HIGH when button is pressed
@@ -57,7 +57,7 @@
 ### LED ###
 
 
-	TTSLed led(Pin);
+	TTSLed led(Pin);									// TTSLED1, TTSLED2, TTSLED3, TTSLED4
 	
 	led.on();                                           // led on
 	led.off();                                          // led off
