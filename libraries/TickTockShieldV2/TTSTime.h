@@ -28,6 +28,7 @@
 
 #ifndef __TTSTIME_H__
 #define __TTSTIME_H__
+
 #ifndef uchar
 #define uchar unsigned char 
 #endif
