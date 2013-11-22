@@ -418,11 +418,13 @@ void TickShield::adjustBrightness()
     disp[3] = alarm_temp.minute%10;
     tm1636.display(disp);
 }
+
 void TickShield::adjustBrightness(uint8_t grayscale)
 {
     g_brightness = grayscale;
     tm1636.set(g_brightness);
 }
+
 /****************************************************************/
 /*Return:int8_t,Temperature that range from -40 to 125 degrees.                    */
 int8_t TickShield::getTemperature()
@@ -435,6 +437,7 @@ int8_t TickShield::getTemperature()
     temperature  = 1/(log(resistance/10000)/B+1/298.15)-273.15;
     return (int8_t)temperature;
 }
+
 /**********************************************************************/
 /*Function:   Display the temperature on the 4-digit display                                        */
 /*Parameter:-int8_t temperature,Temperature that range from -40 to 125 degrees. */
@@ -524,14 +527,17 @@ boolean TickShield::compareWithAlarm()
 }
 
 inline void TickShield::alarmDisable()
-{}
+{
+
+}
+
 void TickShield::setAlarm(struct AlarmStruct alarm_)
 {
     EEPROM.write(5,alarm_.hour);
     EEPROM.write(6,alarm_.minute);
     EEPROM.write(7,alarm_.flag_enable);
-
 }
+
 void TickShield::setAlarm(uint8_t hour,uint8_t minute,uint8_t flag_enable)
 {
     EEPROM.write(5,hour);

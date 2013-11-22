@@ -6,6 +6,8 @@
 #include <TTSButton.h>
 #include <TTSBuzzer.h>
 #include <TTSLight.h>
+#include <TTSTemp.h>
+#include <TTSLed.h>
 
 
 TTSButton button1(TTSK1);
@@ -16,22 +18,24 @@ TTSBuzzer buz;
 
 TTSLight light;
 
+TTSTemp temp;
+
+TTSLed led1(TTSLED1);
+TTSLed led2(TTSLED2);
+TTSLed led3(TTSLED3);
+TTSLed led4(TTSLED4);
 
 int state = 0;
 
 void setup()
 {
+
     Serial.begin(115200);
     cout << "hello world" << endl;
     
     cout << light.get() << endl;
+
     
-    
-    while(1)
-    {
-        cout << analogRead(A1) << endl;
-        delay(100);
-    }
 }
 
 void loop()
@@ -45,8 +49,8 @@ void loop()
             
             state = 1-state;
             
-            if(state)buz.on();
-            else buz.off();
+            if(state)led1.on();
+            else led1.off();
             
             cout << light.get() << endl;
         }
