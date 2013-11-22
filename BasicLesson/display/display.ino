@@ -13,11 +13,10 @@ void setup()
 
 void loop()
 {
-    static int i=0;
+    disp.num(1024);                         // display a number: 1024, you can input 0-9999
+    delay(1000);                            // wait 1s
     
-    disp.num(i++);
-    
-    
-    if(i > 1023)i=0;
-    delay(1);
+    disp.time(11, 26);                      // display time, 11:26
+    disp.pointOn();                         // display :
+    delay(1000);                            // wait 1s
 }

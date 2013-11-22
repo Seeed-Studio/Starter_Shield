@@ -112,6 +112,7 @@ void TTSDisplay::num(int dta)
     
     //clear();
     
+    pointOff();
     if(dta < 10)
     {
         display(0, dta);
