@@ -63,7 +63,8 @@ TTSDisplay::TTSDisplay()
         dtaDisplay[i] = 0x00;
     }
     
-    clear();
+    set();
+    //clear();
 }
 
 /*********************************************************************************************************
@@ -75,12 +76,13 @@ TTSDisplay::TTSDisplay()
 *********************************************************************************************************/
 void TTSDisplay::display(uchar loca, uchar dta)
 {
-    if(loca > 3 || dta > 9 || dta < 0) return;          // bad data
+
+    if(loca > 3 || loca < 0)return;
 
     dtaDisplay[loca] = dta;
 
     loca = 3-loca;
-    
+
     uchar segData = coding(dta);
     
     start();                            //start signal sent to TM1637 from MCU
@@ -108,19 +110,28 @@ void TTSDisplay::num(int dta)
 {
     if(dta < 0 || dta > 9999) return;           // bad data
     
-    clear();
+    //clear();
     
-    if(dta < 10)display(0, dta);
+    if(dta < 10)
+    {
+        display(0, dta);
+        display(1, 0x7f);
+        display(2, 0x7f);
+        display(3, 0x7f);
+    }
     else if(dta < 100)
     {
         display(1, dta/10);
         display(0, dta%10);
+        display(2, 0x7f);
+        display(3, 0x7f);
     }
     else if(dta < 1000)
     {
         display(2, dta/100);
         display(1, (dta/10)%10);
         display(0, dta%10);
+        display(3, 0x7f);
     }
     else
     {
