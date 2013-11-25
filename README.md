@@ -89,9 +89,11 @@ Tick Tcok Shield include RTC, Buzzer, Light Sensor, Temperature Sensor, 3 Button
 	disp.display(int loca, int num);                   	// control a  nixie tube 
 	disp.num(int num);                                  // display a number  
 	disp.time(int hour, int min);                       // display time
+	disp.clear();										// clear display
+	disp.pointOn();										// display :
+	disp.pointOff();									// clear :
 
 ### LED ###
-
 
 	TTSLed led(Pin);									// TTSLED1, TTSLED2, TTSLED3, TTSLED4
 	

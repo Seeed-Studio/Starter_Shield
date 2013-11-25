@@ -42,6 +42,7 @@ private:
     uchar bcdToDec(uchar val);
 public:
 
+    TTSTime(){Wire.begin();}
     void setTime(uchar hour, uchar min, uchar sec);                 // set time
     void getTime(uchar *hour, uchar *min, uchar *sec);              // get time
     uchar getHour();                                                // get hour

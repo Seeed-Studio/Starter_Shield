@@ -37,6 +37,8 @@ buz	KEYWORD1
 
 temp	KEYWORD1
 
+disp	KEYWORD1
+
 #######################################
 # Methods and Functions (KEYWORD2)
 #######################################
