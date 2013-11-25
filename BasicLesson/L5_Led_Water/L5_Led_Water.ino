@@ -1,16 +1,22 @@
-/* 
-  Tick Tock Shield Basic Lesson 5: water
-  This lesson will show you how to use led water.
-  
-  you can use the following functon:
-  
-  led.on();                                         // led on
-  led.off();                                        // led off
-  led.state();                                      // return led state
-*/
+/*********************************************************************************************************
+*  Tick Tock Shield Basic Lesson 5: led water
+*  
+*  This lesson will show you how to use led water.
+*  That's led1-led4 will on and off in turn.
+*
+*  Author: Loovee
+*  2013-11-25
+*  
+*  you may use the following functon:
+*  
+*  led.on();                                        // led on
+*  led.off();                                       // led off
+*  led.state();                                     // return led state
+*********************************************************************************************************/
 
 #include <Wire.h>
 #include <TTSLed.h>
+
 
 #define SPEED   200                                 // water speed
 
@@ -28,26 +34,25 @@ void setup()
 
 void loop()
 {
-
     led1.on();
     led4.off();
     
-    delay(200);
+    delay(SPEED);
     
     led2.on();
     led1.off();
     
-    delay(200);
+    delay(SPEED);
     
     led3.on();
     led2.off();
     
-    delay(200);
+    delay(SPEED);
     
     led4.on();
     led3.off();
     
-    delay(200);
+    delay(SPEED);
 }
 
 /*********************************************************************************************************

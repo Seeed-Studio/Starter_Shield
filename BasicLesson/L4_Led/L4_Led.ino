@@ -1,19 +1,28 @@
-/* 
-  Tick Tock Shield Basic Lesson 4: led
-  This lesson will show you how to use led.
-  We use button 1, 2, 3 to control led1, led2 and led4. 
-  When a button pressed, a led will on.
-
-  you can use the following functon:
-  
-  led.on();                                         // led on
-  led.off();                                        // led off
-  led.state();                                      // return led state
-*/
+/*********************************************************************************************************
+*  Tick Tock Shield Basic Lesson 4: led
+*
+*  This lesson will show you how to use led.
+*  We use button 1, 2, 3 to control led1, led2 and led4. 
+*  When a button pressed, a led will on.
+*
+*  Author: Loovee
+*  2013-11-25
+*  
+*  you may use the following functon:
+*  
+*  button.get();                                    // return button state, HIGH or LOW
+*  button.pressed();                                // return HIGH when button is pressed
+*  button.released();                               // return HIGH when button is released
+*  
+*  led.on();                                        // led on
+*  led.off();                                       // led off
+*  led.state();                                     // return led state
+*********************************************************************************************************/
 
 #include <Wire.h>
 #include <TTSButton.h>
 #include <TTSLed.h>
+
 
 TTSButton but1(TTSK1);                              // instantiate an object of button 1
 TTSButton but2(TTSK2);                              // instantiate an object of button 2
@@ -31,8 +40,7 @@ void setup()
 
 void loop()
 {
-
-    if(but1.pressed())                  // if button1 pressed, then led1 on, or led1 off
+    if(but1.pressed())                              // if button1 pressed, then led1 on, or led1 off
     {
         led1.on();
     }
@@ -41,7 +49,7 @@ void loop()
         led1.off();
     }
     
-    if(but2.pressed())                  // if button2 pressed, then led2 on, or led2 off
+    if(but2.pressed())                              // if button2 pressed, then led2 on, or led2 off
     {
         led2.on();
     }
@@ -50,7 +58,7 @@ void loop()
         led2.off();
     }
     
-    if(but3.pressed())                  // if button3 pressed, then led3 on, or led3 off
+    if(but3.pressed())                              // if button3 pressed, then led3 on, or led3 off
     {
         led3.on();
     }
