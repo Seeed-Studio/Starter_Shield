@@ -1,4 +1,16 @@
-// clock
+/*********************************************************************************************************
+*  Tick Tock Shield Advanced Lesson 4: SetTime
+*  
+*  This lesson we will learn how to set alarm time.
+*  First we will define 2 variables, alarm_hour and alarm_min.
+*  Then in ST_SETALARM, press keyUp will make alarm_hour add one, press keyDown alarm_min add one 
+*  And, we write a function, isAlarm() to check if time to alarm. if timer to alarm, the buzzer will on.
+*  Then the state will change to ST_ALARMING. In this state, when the value of light sensor less than 150.
+*  The buzzer off, meanwhile state will change to ST_TIME.
+*
+*  Author: Loovee
+*  2013-11-29
+*********************************************************************************************************/
 
 #include <Wire.h>
 #include <TimerOne.h>
@@ -15,11 +27,11 @@
 
 // STATE define here
 #define ST_TIME             1               // normal mode, display time and temperature
-#define ST_TEMP             2               // display temperature
+#define ST_SETIME           2               // set time 
 #define ST_SETALARM         3               // set time of alarm
 #define ST_ALARMING         4               // alarming
 #define ST_LIGHT            5               // display light
-#define ST_SETIME           6               // set time 
+#define ST_TEMP             6               // display temperature
 
 
 // object define here

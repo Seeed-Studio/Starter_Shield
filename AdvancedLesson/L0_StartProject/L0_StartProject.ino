@@ -1,5 +1,12 @@
-// clock
-
+/*********************************************************************************************************
+*  Tick Tock Shield Advanced Lesson 0: StartProject
+*  
+*  This lesson we will built an almost empty project.
+*  Just include some include file, an instantiate some object
+*  
+*  Author: Loovee
+*  2013-11-29
+*********************************************************************************************************/
 #include <Wire.h>
 #include <TimerOne.h>
 

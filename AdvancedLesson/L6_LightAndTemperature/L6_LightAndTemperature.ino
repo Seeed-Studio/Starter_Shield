@@ -1,4 +1,13 @@
-// clock
+/*********************************************************************************************************
+*  Tick Tock Shield Advanced Lesson 4: SetTime
+*  
+*  When in ST_TIME. press keyUp will display the value of light sensor, while press keyDown will display
+*  value of temperature. 
+*
+*
+*  Author: Loovee
+*  2013-11-29
+*********************************************************************************************************/
 
 #include <Wire.h>
 #include <TimerOne.h>
@@ -15,11 +24,11 @@
 
 // STATE define here
 #define ST_TIME             1               // normal mode, display time and temperature
-#define ST_TEMP             2               // display temperature
+#define ST_SETIME           2               // set time 
 #define ST_SETALARM         3               // set time of alarm
 #define ST_ALARMING         4               // alarming
 #define ST_LIGHT            5               // display light
-#define ST_SETIME           6               // set time 
+#define ST_TEMP             6               // display temperature
 
 
 // object define here

@@ -1,4 +1,22 @@
-// clock
+/*********************************************************************************************************
+*  Tick Tock Shield Advanced Lesson 1: StateManage
+*  
+*  This lesson will write a state machine to manage all the states.
+*  We have 6 states. 
+*   
+*  ST_TIME - in this state, we will display time, and check the button. 
+*  ST_SETIME - set the time in this state
+*  ST_SETALARM - set time of alarm in this state
+*  ST_ALARMING - time to alarm
+*  ST_LIGHT - display value of light sensor
+*  ST_TEMP - display value of temperature
+*
+*  keyMode can change state. when in ST_TIME, press keyMode can change to ST_SETIME, meanwhile led1 will on.
+*  when in ST_SETIME, press keyMode can change to ST_SETALARM, meanwhile led2 will on and led1 off.
+*  
+*  Author: Loovee
+*  2013-11-29
+*********************************************************************************************************/
 
 #include <Wire.h>
 #include <TimerOne.h>
@@ -15,11 +33,11 @@
 
 // STATE define here
 #define ST_TIME             1               // normal mode, display time and temperature
-#define ST_TEMP             2               // display temperature
+#define ST_SETIME           2               // set time 
 #define ST_SETALARM         3               // set time of alarm
 #define ST_ALARMING         4               // alarming
 #define ST_LIGHT            5               // display light
-#define ST_SETIME           6               // set time 
+#define ST_TEMP             6               // display temperature
 
 
 // object define here

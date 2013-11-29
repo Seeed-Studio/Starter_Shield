@@ -1,5 +1,29 @@
-// clock
-
+/*********************************************************************************************************
+*  Tick Tock Shield Advanced Lesson 2: StateManage
+*  
+*  This lesson will write a button check function which is useful and will be used in the sate machine.
+*   
+*  the function is : unsigned char keyEvent(TTSButton but, const unsigned char chg_state, const char *str_debug);
+*  you can refer to the code, actually it's easy to understand.   
+*
+*  Then, you can find that, we'll use this function to replace such code:
+*
+*   if(keyMode.pressed())
+*   {
+*  	    delay(10);
+*  	    if(keyMode.pressed())
+*  	    {
+*  		    Serial.println("goto ST_SETTIME");
+*  		    led1.on();
+*           state = ST_SETIME;
+*  			
+*  			while(!keyMode.released());
+*       }
+*   }
+*
+*  Author: Loovee
+*  2013-11-29
+*********************************************************************************************************/
 #include <Wire.h>
 #include <TimerOne.h>
 #include <Streaming.h>
@@ -15,11 +39,11 @@
 
 // STATE define here
 #define ST_TIME             1               // normal mode, display time and temperature
-#define ST_TEMP             2               // display temperature
+#define ST_SETIME           2               // set time 
 #define ST_SETALARM         3               // set time of alarm
 #define ST_ALARMING         4               // alarming
 #define ST_LIGHT            5               // display light
-#define ST_SETIME           6               // set time 
+#define ST_TEMP             6               // display temperature
 
 
 // object define here

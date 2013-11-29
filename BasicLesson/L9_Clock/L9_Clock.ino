@@ -15,7 +15,7 @@
 *  time.getMinute();                                // return minutes
 *  time.getSecond();                                // return seconds
 *  
-*  disp.display(int loca, int num);                 // control a  nixie tube
+*  disp.display(int loca, int num);                 // control a nixie tube
 *  disp.num(int num);                               // display a number
 *  disp.time(int hour, int min);                    // display time
 *  disp.clear();                                    // clear display
@@ -31,6 +31,8 @@
 TTSDisplay disp;                                    // instantiate an object of display
 TTSTime time;
 
+int hour = 0;                                       // hour
+int min  = 0;                                       // minutes
 
 void setup()
 {
@@ -39,8 +41,8 @@ void setup()
 
 void loop()
 {
-    int hour = time.getHour();                      // get hour
-    int min  = time.getMin();                       // get minutes
+    hour = time.getHour();                          // get hour
+    min  = time.getMin();                           // get minutes
 
     disp.time(hour, min);                           // display hour:min
     
