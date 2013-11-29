@@ -42,7 +42,6 @@ TTSTemp temp;                               // instantiate an object of temperat
 
 TTSTime time;                               // instantiate an object of rtc
 
-
 int state = ST_TIME;                        // state
 
 int alarm_hour = 8;                         // hour of alarm
@@ -127,13 +126,14 @@ unsigned char isAlarm()
 void setup()
 {
     Serial.begin(115200);
+	Serial.println("hello world, let's start to make a clock!");
+    
     
     now_hour = time.getHour();
     now_min  = time.getMin();
     
     Timer1.initialize(500000);                                  // timer1 500ms
     Timer1.attachInterrupt( timerIsr ); 
-
 }
 
 void loop()
@@ -144,10 +144,10 @@ void loop()
     
         //---------------------------------- ST_TIME --------------------------------------------
         case ST_TIME:
-		
-        if(keyEvent(keyMode, ST_SETIME, "goto ST_SETIME"))      // press keyMode, goto set time mode
+
+        if(keyEvent(keyMode, ST_SETIME, "goto ST_SETIME"))
         {
-            led1.on();                                          // led1 on to indicate set time
+            led1.on();
         }
         
         // get time
@@ -157,42 +157,11 @@ void loop()
         
         isAlarm();                                              // check if alarm
         
-        if(keyDown.pressed())                                   // press keyDown, display temperature
-        {
-            led3.on();                                          // led 3 on for 10ms
-            delay(10);
-            led3.off();
-            while(keyDown.pressed())                            // display temperature until release keyDown
-            {
-                state = ST_TEMP;
-                int temperature = temp.get();
-                disp.num(temperature);
-            }
-            state = ST_TIME;  
-        }
-        
-        if(keyUp.pressed())                                     // press keyUp, display light sensor value
-        {
-
-            led4.on();                                          // led4 on for 10ms
-            delay(10);
-            led4.off();
-            while(keyUp.pressed())                              // display light value until release keyUp
-            {
-                state = ST_LIGHT;
-                int val_light = light.get();
-                disp.num(val_light);
-                
-                delay(100);
-            }
-            state = ST_TIME;  
-        }
-        
         break;
         
         //---------------------------------- ST_SETIME ------------------------------------------
         case ST_SETIME:
-        
+
         // if press keyMode, goto set alarm time mode
         if(keyEvent(keyMode, ST_SETALARM, "set time ok!\r\n goto ST_SETALARM"))     
         {
@@ -219,11 +188,12 @@ void loop()
             disp.time(now_hour, now_min);
         }
         
+		
         break;
         
         //---------------------------------- ST_SETALARM ----------------------------------------
         case ST_SETALARM:
-        
+
         // press keyMode to finish setting. then goto display time mdoe
         if(keyEvent(keyMode, ST_TIME, "set alarm ok!\r\ngoto ST_TIME"))
         {
@@ -244,16 +214,18 @@ void loop()
             disp.time(alarm_hour, alarm_min);
         }
         
+        
         break;
         
         //---------------------------------- ST_ALARMING ----------------------------------------
         case ST_ALARMING:
-        
+
         if(light.get() < 150)                                   // if light sensor value less than 150
         {
             buz.off();
             state = ST_TIME;
         }
+        
         break;
     }
 }
