@@ -1,5 +1,5 @@
 /*********************************************************************************************************
-*  Tick Tock Shield Basic Lesson 5: led water
+*  Tick Tock Shield Basic Lesson 5: chaser light
 *  
 *  This lesson will show you how to use led water.
 *  That's led1-led4 will on and off in turn.
