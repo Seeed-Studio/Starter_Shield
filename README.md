@@ -113,3 +113,8 @@ Seeed Studio is an open hardware facilitation company based in Shenzhen, China. 
 Benefiting from local manufacture power and convenient global logistic system, <br>
 we integrate resources to serve new era of innovation. Seeed also works with <br>
 global distributors and partners to push open hardware movement.<br>
+
+
+
+
+[![Analytics](https://ga-beacon.appspot.com/UA-46589105-3/Tick_Tock_Shield_V2)](https://github.com/igrigorik/ga-beacon)
