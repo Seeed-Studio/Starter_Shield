@@ -1,8 +1,8 @@
-## Tick Tock Shield Library V2.0 ##
+## Starter Shield Library ##
 
-Tick Tock Shield is a perfect start for beginners of Arduino world. You can learn and practice basic soldering tricks and programming principles when tinkering with this kit. Electronic could be fun even if you have bare technical knowledge cause we get your back by preparing a detailed soldering guide and a fully supported library of programming examples from easy to difficult. Hope you have fun and gain some knowledge with this kit!
+Starter Shield is a perfect start for beginners of Arduino world. You can learn and practice basic soldering tricks and programming principles when tinkering with this kit. Electronic could be fun even if you have bare technical knowledge cause we get your back by preparing a detailed soldering guide and a fully supported library of programming examples from easy to difficult. Hope you have fun and gain some knowledge with this kit!
 
-Tick Tock Shield contains most common resources for a basic electronic project, like buttons, sensors, buzzer and display. After you're done with the soldering task, it turns out to be a geek style alarm clock which can auto adjust the brightness of display and keep in synch with real world time.
+Starter Shield contains most common resources for a basic electronic project, like buttons, sensors, buzzer and display. After you're done with the soldering task, it turns out to be a geek style alarm clock which can auto adjust the brightness of display and keep in synch with real world time.
 
 
 [![WiFiBeeV2](http://www.seeedstudio.com/depot/images/product/tickshield.jpg)](http://www.seeedstudio.com/depot/tick-tock-shield-p-1371.html?cPath=84_13)
