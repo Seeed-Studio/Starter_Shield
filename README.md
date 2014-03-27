@@ -37,7 +37,7 @@ The Basic Demo include:
 
 <br>
 ## Class and Function
-Tick Tcok Shield include RTC, Buzzer, Light Sensor, Temperature Sensor, 3 Buttons, Display as well as 4 LEDs. Each of those has a class, whick make it very to use. 
+Starter Shield include RTC, Buzzer, Light Sensor, Temperature Sensor, 3 Buttons, Display as well as 4 LEDs. Each of those has a class, whick make it very to use. 
 
 ### RTC ###
 
